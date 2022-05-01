@@ -68,13 +68,14 @@ async function start() {
         socket.on('signed-message', message => {
             channel = channels[message.contractAddress]
             if(message.sender != channel.addressParty1 && message.sender != channel.addressParty2) {
-                console.log('error here')
+                console.log('sender not satisfy')
+                console.log(message.sender,channel.addressParty1, channel.addressParty2)
                 return 'error' //io.to(channel.socketParty1).emit('error', 'The received address of the first Party is invalid')
             }
 
             const isValid = verifyMessage(message.signedMessage, channel.balanceParty1, channel.balanceParty2, message.amount, message.sender)
             if(!isValid){
-                console.log('error here') 
+                console.log('Oh my god') 
                 return 'error'
              } //io.to(message.sender).emit('error', 'The received message is not valid, generate a new one again')
 
@@ -125,13 +126,5 @@ function generateHash(balance1, balance2, amount) {
 	return hash
 }
 
-function signMessage(hash) {
-	return new Promise((resolve, reject) => {
-		web3.personal.sign(hash, web3.eth.defaultAccount, (err, result) => {
-			if(err) return reject(err)
-			resolve(result)
-		})
-	})
-}
 
 start()
