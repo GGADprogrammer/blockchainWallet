@@ -37,7 +37,7 @@ export default function ModalCreateGroup(props) {
         setResAddress(newContractInstance.options.address);
         let data = {
           contractAddress: newContractInstance.options.address,
-          balanceParty1:initial,
+          balanceParty1:parseInt(initial),
           addressParty1:props.usrAddress[0],
           socketParty1:0
         }

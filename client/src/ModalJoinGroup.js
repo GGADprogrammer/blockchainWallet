@@ -36,7 +36,7 @@ export default function ModalJoinGroup(props) {
     value: props.web3.utils.toWei(joinETH,'ether'),});
     let data = {
       contractAddress: groupAddr,
-      balanceParty2:joinETH,
+      balanceParty2:parseInt(joinETH),
       addressParty2:props.usrAddress[0],
       socketParty2:0
     }

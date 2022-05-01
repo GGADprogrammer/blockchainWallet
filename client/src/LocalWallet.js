@@ -69,7 +69,7 @@ export default function LocalWallet(props) {
             contractAddress:props.channelAddr,
             sender:props.usrAddress[0],
             signedMessage: signedMessage,
-            amount: amount
+            amount: parseInt(amount)
         }
         console.log('in local wallet')
         console.log(Channel.balance1,Channel.balance2,amount)
@@ -200,7 +200,7 @@ export default function LocalWallet(props) {
                         aria-label="Transfer amount"
                         aria-describedby="basic-addon2"
                         value={amount}
-                        onChange={(e) => setAmount(e.target.value)}
+                        onChange={(e) => setAmount(parseInt(e.target.value))}
                     />
                     <Button variant="outline-secondary" id="button-addon2" onClick={transfer}>
                         Confirm
