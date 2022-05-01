@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat&display=swap");
+
+:root {
+  --primary-color: #97dbae;
+  --secondary-color: #c3e5ae;
+  --third-color: #f1e1a6;
+  --warning-color: #f4bbbb;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: var(--secondary-color) !important; */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.navbar {
+  background-color: var(--primary-color);
+}
+.navbar-brand {
+  font-family: "Abril Fatface", cursive;
+}
+
+/* .btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+} */
+
+.btn-lg {
+  font-family: "Montserrat", sans-serif;
+  padding: 2.5rem 1rem !important;
+}
+/* 
+.modal-content {
+  background-color: var(--secondary-color) !important;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--primary-color) !important;
+}
+
+.modal-footer {
+  border-top: 1px solid var(--primary-color) !important;
+} */

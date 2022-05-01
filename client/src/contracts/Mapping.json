@@ -1,0 +1,3513 @@
+{
+  "contractName": "Mapping",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user_addr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "channel_addr",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "nickname",
+          "type": "string"
+        }
+      ],
+      "name": "set",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user_addr",
+          "type": "address"
+        }
+      ],
+      "name": "get",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "channel",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "nickname",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct Mapping.data[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "party",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "channel",
+          "type": "address"
+        }
+      ],
+      "name": "del",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"party\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"channel\",\"type\":\"address\"}],\"name\":\"del\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"user_addr\",\"type\":\"address\"}],\"name\":\"get\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"channel\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"nickname\",\"type\":\"string\"}],\"internalType\":\"struct Mapping.data[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"user_addr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"channel_addr\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"nickname\",\"type\":\"string\"}],\"name\":\"set\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/mapping.sol\":\"Mapping\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/mapping.sol\":{\"keccak256\":\"0x157a13bb43c75173d7eba3ad29f7d8c3773448adeece861047e96552f7be635f\",\"urls\":[\"bzz-raw://e9b11d2e18662f18a37328a09b3201404ee495ae314717577528033f21483087\",\"dweb:/ipfs/QmbQRQbe897yb7tCJWQPhpEjDrxjQxEDAWLGeJMkEh3HLz\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610d40806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c8063615e159014610046578063a29263d814610062578063c2bc2efc1461007e575b600080fd5b610060600480360361005b91908101906109e0565b6100ae565b005b61007c60048036036100779190810190610a1c565b61046d565b005b610098600480360361009391908101906109b7565b61058d565b6040516100a59190610b91565b60405180910390f35b60008090505b6000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080549050811015610468578173ffffffffffffffffffffffffffffffffffffffff166000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020828154811061015d57fe5b906000526020600020906002020160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16141561045b576000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060016000808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080549050038154811061023857fe5b90600052602060002090600202016000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020828154811061028f57fe5b90600052602060002090600202016000820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001820181600101908054600181600116156101000203166002900461032b929190610722565b509050506000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060016000808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208054905003815481106103bc57fe5b9060005260206000209060020201600080820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff021916905560018201600061040291906107a9565b50506000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080548091906001900361045591906107f1565b50610468565b80806001019150506100b4565b505050565b610475610823565b82816000019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250508181602001819052506000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819080600181540180825580915050906001820390600052602060002090600202016000909192909190915060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506020820151816001019080519060200190610583929190610853565b5050505050505050565b60606000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020805480602002602001604051908101604052809291908181526020016000905b8282101561071757838290600052602060002090600202016040518060400160405290816000820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600182018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106ff5780601f106106d4576101008083540402835291602001916106ff565b820191906000526020600020905b8154815290600101906020018083116106e257829003601f168201915b505050505081525050815260200190600101906105ed565b505050509050919050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061075b5780548555610798565b8280016001018555821561079857600052602060002091601f016020900482015b8281111561079757825482559160010191906001019061077c565b5b5090506107a591906108d3565b5090565b50805460018160011615610100020316600290046000825580601f106107cf57506107ee565b601f0160209004906000526020600020908101906107ed91906108d3565b5b50565b81548183558181111561081e5760020281600202836000526020600020918201910161081d91906108f8565b5b505050565b6040518060400160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001606081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061089457805160ff19168380011785556108c2565b828001600101855582156108c2579182015b828111156108c15782518255916020019190600101906108a6565b5b5090506108cf91906108d3565b5090565b6108f591905b808211156108f15760008160009055506001016108d9565b5090565b90565b61094b91905b8082111561094757600080820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff021916905560018201600061093e91906107a9565b506002016108fe565b5090565b90565b60008135905061095d81610ce6565b92915050565b600082601f83011261097457600080fd5b813561098761098282610be0565b610bb3565b915080825260208301602083018583830111156109a357600080fd5b6109ae838284610c93565b50505092915050565b6000602082840312156109c957600080fd5b60006109d78482850161094e565b91505092915050565b600080604083850312156109f357600080fd5b6000610a018582860161094e565b9250506020610a128582860161094e565b9150509250929050565b600080600060608486031215610a3157600080fd5b6000610a3f8682870161094e565b9350506020610a508682870161094e565b925050604084013567ffffffffffffffff811115610a6d57600080fd5b610a7986828701610963565b9150509250925092565b6000610a8f8383610b54565b905092915050565b610aa081610c61565b82525050565b6000610ab182610c1c565b610abb8185610c3f565b935083602082028501610acd85610c0c565b8060005b85811015610b095784840389528151610aea8582610a83565b9450610af583610c32565b925060208a01995050600181019050610ad1565b50829750879550505050505092915050565b6000610b2682610c27565b610b308185610c50565b9350610b40818560208601610ca2565b610b4981610cd5565b840191505092915050565b6000604083016000830151610b6c6000860182610a97565b5060208301518482036020860152610b848282610b1b565b9150508091505092915050565b60006020820190508181036000830152610bab8184610aa6565b905092915050565b6000604051905081810181811067ffffffffffffffff82111715610bd657600080fd5b8060405250919050565b600067ffffffffffffffff821115610bf757600080fd5b601f19601f8301169050602081019050919050565b6000819050602082019050919050565b600081519050919050565b600081519050919050565b6000602082019050919050565b600082825260208201905092915050565b600082825260208201905092915050565b6000610c6c82610c73565b9050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b82818337600083830152505050565b60005b83811015610cc0578082015181840152602081019050610ca5565b83811115610ccf576000848401525b50505050565b6000601f19601f8301169050919050565b610cef81610c61565b8114610cfa57600080fd5b5056fea365627a7a72315820262fc4a56ddc184924ad7960a3703343d085717490ae44791a2d703e6071882a6c6578706572696d656e74616cf564736f6c63430005100040",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c8063615e159014610046578063a29263d814610062578063c2bc2efc1461007e575b600080fd5b610060600480360361005b91908101906109e0565b6100ae565b005b61007c60048036036100779190810190610a1c565b61046d565b005b610098600480360361009391908101906109b7565b61058d565b6040516100a59190610b91565b60405180910390f35b60008090505b6000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080549050811015610468578173ffffffffffffffffffffffffffffffffffffffff166000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020828154811061015d57fe5b906000526020600020906002020160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16141561045b576000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060016000808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080549050038154811061023857fe5b90600052602060002090600202016000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020828154811061028f57fe5b90600052602060002090600202016000820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001820181600101908054600181600116156101000203166002900461032b929190610722565b509050506000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060016000808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208054905003815481106103bc57fe5b9060005260206000209060020201600080820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff021916905560018201600061040291906107a9565b50506000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080548091906001900361045591906107f1565b50610468565b80806001019150506100b4565b505050565b610475610823565b82816000019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250508181602001819052506000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819080600181540180825580915050906001820390600052602060002090600202016000909192909190915060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506020820151816001019080519060200190610583929190610853565b5050505050505050565b60606000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020805480602002602001604051908101604052809291908181526020016000905b8282101561071757838290600052602060002090600202016040518060400160405290816000820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600182018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106ff5780601f106106d4576101008083540402835291602001916106ff565b820191906000526020600020905b8154815290600101906020018083116106e257829003601f168201915b505050505081525050815260200190600101906105ed565b505050509050919050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061075b5780548555610798565b8280016001018555821561079857600052602060002091601f016020900482015b8281111561079757825482559160010191906001019061077c565b5b5090506107a591906108d3565b5090565b50805460018160011615610100020316600290046000825580601f106107cf57506107ee565b601f0160209004906000526020600020908101906107ed91906108d3565b5b50565b81548183558181111561081e5760020281600202836000526020600020918201910161081d91906108f8565b5b505050565b6040518060400160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001606081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061089457805160ff19168380011785556108c2565b828001600101855582156108c2579182015b828111156108c15782518255916020019190600101906108a6565b5b5090506108cf91906108d3565b5090565b6108f591905b808211156108f15760008160009055506001016108d9565b5090565b90565b61094b91905b8082111561094757600080820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff021916905560018201600061093e91906107a9565b506002016108fe565b5090565b90565b60008135905061095d81610ce6565b92915050565b600082601f83011261097457600080fd5b813561098761098282610be0565b610bb3565b915080825260208301602083018583830111156109a357600080fd5b6109ae838284610c93565b50505092915050565b6000602082840312156109c957600080fd5b60006109d78482850161094e565b91505092915050565b600080604083850312156109f357600080fd5b6000610a018582860161094e565b9250506020610a128582860161094e565b9150509250929050565b600080600060608486031215610a3157600080fd5b6000610a3f8682870161094e565b9350506020610a508682870161094e565b925050604084013567ffffffffffffffff811115610a6d57600080fd5b610a7986828701610963565b9150509250925092565b6000610a8f8383610b54565b905092915050565b610aa081610c61565b82525050565b6000610ab182610c1c565b610abb8185610c3f565b935083602082028501610acd85610c0c565b8060005b85811015610b095784840389528151610aea8582610a83565b9450610af583610c32565b925060208a01995050600181019050610ad1565b50829750879550505050505092915050565b6000610b2682610c27565b610b308185610c50565b9350610b40818560208601610ca2565b610b4981610cd5565b840191505092915050565b6000604083016000830151610b6c6000860182610a97565b5060208301518482036020860152610b848282610b1b565b9150508091505092915050565b60006020820190508181036000830152610bab8184610aa6565b905092915050565b6000604051905081810181811067ffffffffffffffff82111715610bd657600080fd5b8060405250919050565b600067ffffffffffffffff821115610bf757600080fd5b601f19601f8301169050602081019050919050565b6000819050602082019050919050565b600081519050919050565b600081519050919050565b6000602082019050919050565b600082825260208201905092915050565b600082825260208201905092915050565b6000610c6c82610c73565b9050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b82818337600083830152505050565b60005b83811015610cc0578082015181840152602081019050610ca5565b83811115610ccf576000848401525b50505050565b6000601f19601f8301169050919050565b610cef81610c61565b8114610cfa57600080fd5b5056fea365627a7a72315820262fc4a56ddc184924ad7960a3703343d085717490ae44791a2d703e6071882a6c6578706572696d656e74616cf564736f6c63430005100040",
+  "sourceMap": "64:901:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;64:901:3;;;;;;;",
+  "deployedSourceMap": "64:901:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;64:901:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;566:394;;;;;;;;;;;;;;;;:::i;:::-;;212:231;;;;;;;;;;;;;;;;:::i;:::-;;449:111;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;566:394;628:6;637:1;628:10;;624:331;644:12;:19;657:5;644:19;;;;;;;;;;;;;;;:26;;;;640:1;:30;624:331;;;723:7;689:41;;:12;:19;702:5;689:19;;;;;;;;;;;;;;;709:1;689:22;;;;;;;;;;;;;;;;;;:30;;;;;;;;;;;;:41;;;685:263;;;767:12;:19;780:5;767:19;;;;;;;;;;;;;;;814:1;787:12;:19;800:5;787:19;;;;;;;;;;;;;;;:26;;;;:28;767:49;;;;;;;;;;;;;;;;;;742:12;:19;755:5;742:19;;;;;;;;;;;;;;;762:1;742:22;;;;;;;;;;;;;;;;;;:74;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;834:12;:19;847:5;834:19;;;;;;;;;;;;;;;881:1;854:12;:19;867:5;854:19;;;;;;;;;;;;;;;:26;;;;:28;834:49;;;;;;;;;;;;;;;;;;;827:56;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;894:12;:19;907:5;894:19;;;;;;;;;;;;;;;:28;;;;;;;;;;;;:::i;:::-;;933:5;;685:263;672:3;;;;;;;624:331;;;;566:394;;:::o;212:231::-;303:19;;:::i;:::-;347:12;329:7;:15;;:30;;;;;;;;;;;385:8;366:7;:16;;:27;;;;400:12;:23;413:9;400:23;;;;;;;;;;;;;;;429:7;400:37;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;400:37:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;212:231;;;;:::o;449:111::-;502:13;531:12;:23;544:9;531:23;;;;;;;;;;;;;;;524:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;449:111;;;:::o;64:901::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;:::o;5:130:-1:-;;85:6;72:20;63:29;;97:33;124:5;97:33;;;57:78;;;;;143:442;;245:3;238:4;230:6;226:17;222:27;212:2;;263:1;260;253:12;212:2;300:6;287:20;322:65;337:49;379:6;337:49;;;322:65;;;313:74;;407:6;400:5;393:21;443:4;435:6;431:17;476:4;469:5;465:16;511:3;502:6;497:3;493:16;490:25;487:2;;;528:1;525;518:12;487:2;538:41;572:6;567:3;562;538:41;;;205:380;;;;;;;;593:241;;697:2;685:9;676:7;672:23;668:32;665:2;;;713:1;710;703:12;665:2;748:1;765:53;810:7;801:6;790:9;786:22;765:53;;;755:63;;727:97;659:175;;;;;841:366;;;962:2;950:9;941:7;937:23;933:32;930:2;;;978:1;975;968:12;930:2;1013:1;1030:53;1075:7;1066:6;1055:9;1051:22;1030:53;;;1020:63;;992:97;1120:2;1138:53;1183:7;1174:6;1163:9;1159:22;1138:53;;;1128:63;;1099:98;924:283;;;;;;1214:597;;;;1362:2;1350:9;1341:7;1337:23;1333:32;1330:2;;;1378:1;1375;1368:12;1330:2;1413:1;1430:53;1475:7;1466:6;1455:9;1451:22;1430:53;;;1420:63;;1392:97;1520:2;1538:53;1583:7;1574:6;1563:9;1559:22;1538:53;;;1528:63;;1499:98;1656:2;1645:9;1641:18;1628:32;1680:18;1672:6;1669:30;1666:2;;;1712:1;1709;1702:12;1666:2;1732:63;1787:7;1778:6;1767:9;1763:22;1732:63;;;1722:73;;1607:194;1324:487;;;;;;1819:225;;1954:84;2034:3;2026:6;1954:84;;;1940:98;;1933:111;;;;;2052:103;2125:24;2143:5;2125:24;;;2120:3;2113:37;2107:48;;;2217:984;;2396:71;2461:5;2396:71;;;2480:103;2576:6;2571:3;2480:103;;;2473:110;;2606:3;2648:4;2640:6;2636:17;2631:3;2627:27;2675:73;2742:5;2675:73;;;2768:7;2796:1;2781:381;2806:6;2803:1;2800:13;2781:381;;;2868:9;2862:4;2858:20;2853:3;2846:33;2913:6;2907:13;2935:98;3028:4;3013:13;2935:98;;;2927:106;;3050:77;3120:6;3050:77;;;3040:87;;3150:4;3145:3;3141:14;3134:21;;2838:324;2828:1;2825;2821:9;2816:14;;2781:381;;;2785:14;3175:4;3168:11;;3192:3;3185:10;;2375:826;;;;;;;;;;3209:319;;3307:35;3336:5;3307:35;;;3354:61;3408:6;3403:3;3354:61;;;3347:68;;3420:52;3465:6;3460:3;3453:4;3446:5;3442:16;3420:52;;;3493:29;3515:6;3493:29;;;3488:3;3484:39;3477:46;;3287:241;;;;;;3584:552;;3713:4;3708:3;3704:14;3799:4;3792:5;3788:16;3782:23;3811:63;3868:4;3863:3;3859:14;3845:12;3811:63;;;3733:147;3957:4;3950:5;3946:16;3940:23;4009:3;4003:4;3999:14;3992:4;3987:3;3983:14;3976:38;4029:69;4093:4;4079:12;4029:69;;;4021:77;;3890:220;4127:4;4120:11;;3686:450;;;;;;4143:429;;4345:2;4334:9;4330:18;4322:26;;4395:9;4389:4;4385:20;4381:1;4370:9;4366:17;4359:47;4420:142;4557:4;4548:6;4420:142;;;4412:150;;4316:256;;;;;4579;;4641:2;4635:9;4625:19;;4679:4;4671:6;4667:17;4778:6;4766:10;4763:22;4742:18;4730:10;4727:34;4724:62;4721:2;;;4799:1;4796;4789:12;4721:2;4819:10;4815:2;4808:22;4619:216;;;;;4842:322;;4986:18;4978:6;4975:30;4972:2;;;5018:1;5015;5008:12;4972:2;5085:4;5081:9;5074:4;5066:6;5062:17;5058:33;5050:41;;5149:4;5143;5139:15;5131:23;;4909:255;;;;5171:168;;5274:3;5266:11;;5312:4;5307:3;5303:14;5295:22;;5260:79;;;;5346:154;;5472:5;5466:12;5456:22;;5437:63;;;;5507:118;;5597:5;5591:12;5581:22;;5562:63;;;;5632:125;;5747:4;5742:3;5738:14;5730:22;;5724:33;;;;5765:195;;5912:6;5907:3;5900:19;5949:4;5944:3;5940:14;5925:29;;5893:67;;;;;5969:153;;6074:6;6069:3;6062:19;6111:4;6106:3;6102:14;6087:29;;6055:67;;;;;6130:91;;6192:24;6210:5;6192:24;;;6181:35;;6175:46;;;;6228:121;;6301:42;6294:5;6290:54;6279:65;;6273:76;;;;6357:145;6438:6;6433:3;6428;6415:30;6494:1;6485:6;6480:3;6476:16;6469:27;6408:94;;;;6511:268;6576:1;6583:101;6597:6;6594:1;6591:13;6583:101;;;6673:1;6668:3;6664:11;6658:18;6654:1;6649:3;6645:11;6638:39;6619:2;6616:1;6612:10;6607:15;;6583:101;;;6699:6;6696:1;6693:13;6690:2;;;6764:1;6755:6;6750:3;6746:16;6739:27;6690:2;6560:219;;;;;6787:97;;6875:2;6871:7;6866:2;6859:5;6855:14;6851:28;6841:38;;6835:49;;;;6892:117;6961:24;6979:5;6961:24;;;6954:5;6951:35;6941:2;;7000:1;6997;6990:12;6941:2;6935:74;",
+  "source": "pragma solidity ^0.5.0;\r\npragma experimental ABIEncoderV2;\r\n\r\n\r\ncontract Mapping {\r\n    struct data {\r\n      address channel;\r\n      string nickname;\r\n  }\r\n  mapping(address => data[]) private user_channel;\r\n\r\n  function set(address user_addr, address channel_addr, string memory nickname) public{\r\n    data memory element;\r\n    element.channel = channel_addr;\r\n    element.nickname = nickname;\r\n    user_channel[user_addr].push(element);\r\n  }\r\n\r\n  function get(address user_addr) public view returns (data[] memory) {\r\n    return user_channel[user_addr];\r\n  }\r\n\r\n  function del(address party, address channel) public{\r\n    for(uint i = 0; i < user_channel[party].length; i++){\r\n      if (user_channel[party][i].channel == channel){\r\n        user_channel[party][i] = user_channel[party][user_channel[party].length-1];\r\n        delete user_channel[party][user_channel[party].length-1];\r\n        user_channel[party].length--;\r\n        break;\r\n      }\r\n    }\r\n  }\r\n\r\n}\r\n",
+  "sourcePath": "D:\\Austin\\blockchain\\project\\splitcoinwise\\contracts\\mapping.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/mapping.sol",
+    "exportedSymbols": {
+      "Mapping": [
+        611
+      ]
+    },
+    "id": 612,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 485,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:3"
+      },
+      {
+        "id": 486,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "25:33:3"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 611,
+        "linearizedBaseContracts": [
+          611
+        ],
+        "name": "Mapping",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Mapping.data",
+            "id": 491,
+            "members": [
+              {
+                "constant": false,
+                "id": 488,
+                "name": "channel",
+                "nodeType": "VariableDeclaration",
+                "scope": 491,
+                "src": "109:15:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 487,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "109:7:3",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 490,
+                "name": "nickname",
+                "nodeType": "VariableDeclaration",
+                "scope": 491,
+                "src": "133:15:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 489,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "133:6:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "data",
+            "nodeType": "StructDefinition",
+            "scope": 611,
+            "src": "88:66:3",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 496,
+            "name": "user_channel",
+            "nodeType": "VariableDeclaration",
+            "scope": 611,
+            "src": "158:47:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_data_$491_storage_$dyn_storage_$",
+              "typeString": "mapping(address => struct Mapping.data[])"
+            },
+            "typeName": {
+              "id": 495,
+              "keyType": {
+                "id": 492,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "166:7:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "158:26:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_data_$491_storage_$dyn_storage_$",
+                "typeString": "mapping(address => struct Mapping.data[])"
+              },
+              "valueType": {
+                "baseType": {
+                  "contractScope": null,
+                  "id": 493,
+                  "name": "data",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 491,
+                  "src": "177:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_data_$491_storage_ptr",
+                    "typeString": "struct Mapping.data"
+                  }
+                },
+                "id": 494,
+                "length": null,
+                "nodeType": "ArrayTypeName",
+                "src": "177:6:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_data_$491_storage_$dyn_storage_ptr",
+                  "typeString": "struct Mapping.data[]"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 527,
+              "nodeType": "Block",
+              "src": "296:147:3",
+              "statements": [
+                {
+                  "assignments": [
+                    506
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 506,
+                      "name": "element",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 527,
+                      "src": "303:19:3",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_data_$491_memory_ptr",
+                        "typeString": "struct Mapping.data"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 505,
+                        "name": "data",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 491,
+                        "src": "303:4:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_data_$491_storage_ptr",
+                          "typeString": "struct Mapping.data"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 507,
+                  "initialValue": null,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "303:19:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 512,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 508,
+                        "name": "element",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "329:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_data_$491_memory_ptr",
+                          "typeString": "struct Mapping.data memory"
+                        }
+                      },
+                      "id": 510,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "channel",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 488,
+                      "src": "329:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 511,
+                      "name": "channel_addr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 500,
+                      "src": "347:12:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "329:30:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 513,
+                  "nodeType": "ExpressionStatement",
+                  "src": "329:30:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 518,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 514,
+                        "name": "element",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "366:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_data_$491_memory_ptr",
+                          "typeString": "struct Mapping.data memory"
+                        }
+                      },
+                      "id": 516,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "nickname",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 490,
+                      "src": "366:16:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 517,
+                      "name": "nickname",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 502,
+                      "src": "385:8:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "366:27:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "id": 519,
+                  "nodeType": "ExpressionStatement",
+                  "src": "366:27:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 524,
+                        "name": "element",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "429:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_data_$491_memory_ptr",
+                          "typeString": "struct Mapping.data memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_data_$491_memory_ptr",
+                          "typeString": "struct Mapping.data memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 520,
+                          "name": "user_channel",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 496,
+                          "src": "400:12:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_data_$491_storage_$dyn_storage_$",
+                            "typeString": "mapping(address => struct Mapping.data storage ref[] storage ref)"
+                          }
+                        },
+                        "id": 522,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 521,
+                          "name": "user_addr",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 498,
+                          "src": "413:9:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "400:23:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_data_$491_storage_$dyn_storage",
+                          "typeString": "struct Mapping.data storage ref[] storage ref"
+                        }
+                      },
+                      "id": 523,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "400:28:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_data_$491_storage_$returns$_t_uint256_$",
+                        "typeString": "function (struct Mapping.data storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 525,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "400:37:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 526,
+                  "nodeType": "ExpressionStatement",
+                  "src": "400:37:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 528,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "set",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 503,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 498,
+                  "name": "user_addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 528,
+                  "src": "225:17:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 497,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "225:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 500,
+                  "name": "channel_addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 528,
+                  "src": "244:20:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 499,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "244:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 502,
+                  "name": "nickname",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 528,
+                  "src": "266:22:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 501,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "266:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "224:65:3"
+            },
+            "returnParameters": {
+              "id": 504,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "296:0:3"
+            },
+            "scope": 611,
+            "src": "212:231:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 540,
+              "nodeType": "Block",
+              "src": "517:43:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 536,
+                      "name": "user_channel",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 496,
+                      "src": "531:12:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_data_$491_storage_$dyn_storage_$",
+                        "typeString": "mapping(address => struct Mapping.data storage ref[] storage ref)"
+                      }
+                    },
+                    "id": 538,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 537,
+                      "name": "user_addr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 530,
+                      "src": "544:9:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "531:23:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_data_$491_storage_$dyn_storage",
+                      "typeString": "struct Mapping.data storage ref[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 535,
+                  "id": 539,
+                  "nodeType": "Return",
+                  "src": "524:30:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 541,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 531,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 530,
+                  "name": "user_addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 541,
+                  "src": "462:17:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 529,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "462:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "461:19:3"
+            },
+            "returnParameters": {
+              "id": 535,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 534,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 541,
+                  "src": "502:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_data_$491_memory_$dyn_memory_ptr",
+                    "typeString": "struct Mapping.data[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 532,
+                      "name": "data",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 491,
+                      "src": "502:4:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_data_$491_storage_ptr",
+                        "typeString": "struct Mapping.data"
+                      }
+                    },
+                    "id": 533,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "502:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_data_$491_storage_$dyn_storage_ptr",
+                      "typeString": "struct Mapping.data[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "501:15:3"
+            },
+            "scope": 611,
+            "src": "449:111:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 609,
+              "nodeType": "Block",
+              "src": "617:343:3",
+              "statements": [
+                {
+                  "body": {
+                    "id": 607,
+                    "nodeType": "Block",
+                    "src": "676:279:3",
+                    "statements": [
+                      {
+                        "condition": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "id": 568,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "baseExpression": {
+                                "argumentTypes": null,
+                                "baseExpression": {
+                                  "argumentTypes": null,
+                                  "id": 561,
+                                  "name": "user_channel",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 496,
+                                  "src": "689:12:3",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_data_$491_storage_$dyn_storage_$",
+                                    "typeString": "mapping(address => struct Mapping.data storage ref[] storage ref)"
+                                  }
+                                },
+                                "id": 563,
+                                "indexExpression": {
+                                  "argumentTypes": null,
+                                  "id": 562,
+                                  "name": "party",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 543,
+                                  "src": "702:5:3",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_address",
+                                    "typeString": "address"
+                                  }
+                                },
+                                "isConstant": false,
+                                "isLValue": true,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "nodeType": "IndexAccess",
+                                "src": "689:19:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_array$_t_struct$_data_$491_storage_$dyn_storage",
+                                  "typeString": "struct Mapping.data storage ref[] storage ref"
+                                }
+                              },
+                              "id": 565,
+                              "indexExpression": {
+                                "argumentTypes": null,
+                                "id": 564,
+                                "name": "i",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 549,
+                                "src": "709:1:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "689:22:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_data_$491_storage",
+                                "typeString": "struct Mapping.data storage ref"
+                              }
+                            },
+                            "id": 566,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "channel",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 488,
+                            "src": "689:30:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "id": 567,
+                            "name": "channel",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 545,
+                            "src": "723:7:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "689:41:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "falseBody": null,
+                        "id": 606,
+                        "nodeType": "IfStatement",
+                        "src": "685:263:3",
+                        "trueBody": {
+                          "id": 605,
+                          "nodeType": "Block",
+                          "src": "731:217:3",
+                          "statements": [
+                            {
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 584,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftHandSide": {
+                                  "argumentTypes": null,
+                                  "baseExpression": {
+                                    "argumentTypes": null,
+                                    "baseExpression": {
+                                      "argumentTypes": null,
+                                      "id": 569,
+                                      "name": "user_channel",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 496,
+                                      "src": "742:12:3",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_data_$491_storage_$dyn_storage_$",
+                                        "typeString": "mapping(address => struct Mapping.data storage ref[] storage ref)"
+                                      }
+                                    },
+                                    "id": 572,
+                                    "indexExpression": {
+                                      "argumentTypes": null,
+                                      "id": 570,
+                                      "name": "party",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 543,
+                                      "src": "755:5:3",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                      }
+                                    },
+                                    "isConstant": false,
+                                    "isLValue": true,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "nodeType": "IndexAccess",
+                                    "src": "742:19:3",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_array$_t_struct$_data_$491_storage_$dyn_storage",
+                                      "typeString": "struct Mapping.data storage ref[] storage ref"
+                                    }
+                                  },
+                                  "id": 573,
+                                  "indexExpression": {
+                                    "argumentTypes": null,
+                                    "id": 571,
+                                    "name": "i",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 549,
+                                    "src": "762:1:3",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": true,
+                                  "nodeType": "IndexAccess",
+                                  "src": "742:22:3",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_struct$_data_$491_storage",
+                                    "typeString": "struct Mapping.data storage ref"
+                                  }
+                                },
+                                "nodeType": "Assignment",
+                                "operator": "=",
+                                "rightHandSide": {
+                                  "argumentTypes": null,
+                                  "baseExpression": {
+                                    "argumentTypes": null,
+                                    "baseExpression": {
+                                      "argumentTypes": null,
+                                      "id": 574,
+                                      "name": "user_channel",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 496,
+                                      "src": "767:12:3",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_data_$491_storage_$dyn_storage_$",
+                                        "typeString": "mapping(address => struct Mapping.data storage ref[] storage ref)"
+                                      }
+                                    },
+                                    "id": 576,
+                                    "indexExpression": {
+                                      "argumentTypes": null,
+                                      "id": 575,
+                                      "name": "party",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 543,
+                                      "src": "780:5:3",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                      }
+                                    },
+                                    "isConstant": false,
+                                    "isLValue": true,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "nodeType": "IndexAccess",
+                                    "src": "767:19:3",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_array$_t_struct$_data_$491_storage_$dyn_storage",
+                                      "typeString": "struct Mapping.data storage ref[] storage ref"
+                                    }
+                                  },
+                                  "id": 583,
+                                  "indexExpression": {
+                                    "argumentTypes": null,
+                                    "commonType": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    },
+                                    "id": 582,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "leftExpression": {
+                                      "argumentTypes": null,
+                                      "expression": {
+                                        "argumentTypes": null,
+                                        "baseExpression": {
+                                          "argumentTypes": null,
+                                          "id": 577,
+                                          "name": "user_channel",
+                                          "nodeType": "Identifier",
+                                          "overloadedDeclarations": [],
+                                          "referencedDeclaration": 496,
+                                          "src": "787:12:3",
+                                          "typeDescriptions": {
+                                            "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_data_$491_storage_$dyn_storage_$",
+                                            "typeString": "mapping(address => struct Mapping.data storage ref[] storage ref)"
+                                          }
+                                        },
+                                        "id": 579,
+                                        "indexExpression": {
+                                          "argumentTypes": null,
+                                          "id": 578,
+                                          "name": "party",
+                                          "nodeType": "Identifier",
+                                          "overloadedDeclarations": [],
+                                          "referencedDeclaration": 543,
+                                          "src": "800:5:3",
+                                          "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                          }
+                                        },
+                                        "isConstant": false,
+                                        "isLValue": true,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "nodeType": "IndexAccess",
+                                        "src": "787:19:3",
+                                        "typeDescriptions": {
+                                          "typeIdentifier": "t_array$_t_struct$_data_$491_storage_$dyn_storage",
+                                          "typeString": "struct Mapping.data storage ref[] storage ref"
+                                        }
+                                      },
+                                      "id": 580,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "memberName": "length",
+                                      "nodeType": "MemberAccess",
+                                      "referencedDeclaration": null,
+                                      "src": "787:26:3",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                      }
+                                    },
+                                    "nodeType": "BinaryOperation",
+                                    "operator": "-",
+                                    "rightExpression": {
+                                      "argumentTypes": null,
+                                      "hexValue": "31",
+                                      "id": 581,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "kind": "number",
+                                      "lValueRequested": false,
+                                      "nodeType": "Literal",
+                                      "src": "814:1:3",
+                                      "subdenomination": null,
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_rational_1_by_1",
+                                        "typeString": "int_const 1"
+                                      },
+                                      "value": "1"
+                                    },
+                                    "src": "787:28:3",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "nodeType": "IndexAccess",
+                                  "src": "767:49:3",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_struct$_data_$491_storage",
+                                    "typeString": "struct Mapping.data storage ref"
+                                  }
+                                },
+                                "src": "742:74:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_data_$491_storage",
+                                  "typeString": "struct Mapping.data storage ref"
+                                }
+                              },
+                              "id": 585,
+                              "nodeType": "ExpressionStatement",
+                              "src": "742:74:3"
+                            },
+                            {
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 596,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "nodeType": "UnaryOperation",
+                                "operator": "delete",
+                                "prefix": true,
+                                "src": "827:56:3",
+                                "subExpression": {
+                                  "argumentTypes": null,
+                                  "baseExpression": {
+                                    "argumentTypes": null,
+                                    "baseExpression": {
+                                      "argumentTypes": null,
+                                      "id": 586,
+                                      "name": "user_channel",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 496,
+                                      "src": "834:12:3",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_data_$491_storage_$dyn_storage_$",
+                                        "typeString": "mapping(address => struct Mapping.data storage ref[] storage ref)"
+                                      }
+                                    },
+                                    "id": 588,
+                                    "indexExpression": {
+                                      "argumentTypes": null,
+                                      "id": 587,
+                                      "name": "party",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 543,
+                                      "src": "847:5:3",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                      }
+                                    },
+                                    "isConstant": false,
+                                    "isLValue": true,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "nodeType": "IndexAccess",
+                                    "src": "834:19:3",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_array$_t_struct$_data_$491_storage_$dyn_storage",
+                                      "typeString": "struct Mapping.data storage ref[] storage ref"
+                                    }
+                                  },
+                                  "id": 595,
+                                  "indexExpression": {
+                                    "argumentTypes": null,
+                                    "commonType": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    },
+                                    "id": 594,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "leftExpression": {
+                                      "argumentTypes": null,
+                                      "expression": {
+                                        "argumentTypes": null,
+                                        "baseExpression": {
+                                          "argumentTypes": null,
+                                          "id": 589,
+                                          "name": "user_channel",
+                                          "nodeType": "Identifier",
+                                          "overloadedDeclarations": [],
+                                          "referencedDeclaration": 496,
+                                          "src": "854:12:3",
+                                          "typeDescriptions": {
+                                            "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_data_$491_storage_$dyn_storage_$",
+                                            "typeString": "mapping(address => struct Mapping.data storage ref[] storage ref)"
+                                          }
+                                        },
+                                        "id": 591,
+                                        "indexExpression": {
+                                          "argumentTypes": null,
+                                          "id": 590,
+                                          "name": "party",
+                                          "nodeType": "Identifier",
+                                          "overloadedDeclarations": [],
+                                          "referencedDeclaration": 543,
+                                          "src": "867:5:3",
+                                          "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                          }
+                                        },
+                                        "isConstant": false,
+                                        "isLValue": true,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "nodeType": "IndexAccess",
+                                        "src": "854:19:3",
+                                        "typeDescriptions": {
+                                          "typeIdentifier": "t_array$_t_struct$_data_$491_storage_$dyn_storage",
+                                          "typeString": "struct Mapping.data storage ref[] storage ref"
+                                        }
+                                      },
+                                      "id": 592,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "memberName": "length",
+                                      "nodeType": "MemberAccess",
+                                      "referencedDeclaration": null,
+                                      "src": "854:26:3",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                      }
+                                    },
+                                    "nodeType": "BinaryOperation",
+                                    "operator": "-",
+                                    "rightExpression": {
+                                      "argumentTypes": null,
+                                      "hexValue": "31",
+                                      "id": 593,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "kind": "number",
+                                      "lValueRequested": false,
+                                      "nodeType": "Literal",
+                                      "src": "881:1:3",
+                                      "subdenomination": null,
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_rational_1_by_1",
+                                        "typeString": "int_const 1"
+                                      },
+                                      "value": "1"
+                                    },
+                                    "src": "854:28:3",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": true,
+                                  "nodeType": "IndexAccess",
+                                  "src": "834:49:3",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_struct$_data_$491_storage",
+                                    "typeString": "struct Mapping.data storage ref"
+                                  }
+                                },
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_tuple$__$",
+                                  "typeString": "tuple()"
+                                }
+                              },
+                              "id": 597,
+                              "nodeType": "ExpressionStatement",
+                              "src": "827:56:3"
+                            },
+                            {
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 602,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "nodeType": "UnaryOperation",
+                                "operator": "--",
+                                "prefix": false,
+                                "src": "894:28:3",
+                                "subExpression": {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "baseExpression": {
+                                      "argumentTypes": null,
+                                      "id": 598,
+                                      "name": "user_channel",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 496,
+                                      "src": "894:12:3",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_data_$491_storage_$dyn_storage_$",
+                                        "typeString": "mapping(address => struct Mapping.data storage ref[] storage ref)"
+                                      }
+                                    },
+                                    "id": 600,
+                                    "indexExpression": {
+                                      "argumentTypes": null,
+                                      "id": 599,
+                                      "name": "party",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 543,
+                                      "src": "907:5:3",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                      }
+                                    },
+                                    "isConstant": false,
+                                    "isLValue": true,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "nodeType": "IndexAccess",
+                                    "src": "894:19:3",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_array$_t_struct$_data_$491_storage_$dyn_storage",
+                                      "typeString": "struct Mapping.data storage ref[] storage ref"
+                                    }
+                                  },
+                                  "id": 601,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": true,
+                                  "memberName": "length",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": null,
+                                  "src": "894:26:3",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "id": 603,
+                              "nodeType": "ExpressionStatement",
+                              "src": "894:28:3"
+                            },
+                            {
+                              "id": 604,
+                              "nodeType": "Break",
+                              "src": "933:5:3"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 557,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 552,
+                      "name": "i",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 549,
+                      "src": "640:1:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 553,
+                          "name": "user_channel",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 496,
+                          "src": "644:12:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_data_$491_storage_$dyn_storage_$",
+                            "typeString": "mapping(address => struct Mapping.data storage ref[] storage ref)"
+                          }
+                        },
+                        "id": 555,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 554,
+                          "name": "party",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 543,
+                          "src": "657:5:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "644:19:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_data_$491_storage_$dyn_storage",
+                          "typeString": "struct Mapping.data storage ref[] storage ref"
+                        }
+                      },
+                      "id": 556,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "length",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "644:26:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "640:30:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 608,
+                  "initializationExpression": {
+                    "assignments": [
+                      549
+                    ],
+                    "declarations": [
+                      {
+                        "constant": false,
+                        "id": 549,
+                        "name": "i",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 608,
+                        "src": "628:6:3",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 548,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "628:4:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "value": null,
+                        "visibility": "internal"
+                      }
+                    ],
+                    "id": 551,
+                    "initialValue": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 550,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "637:1:3",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "nodeType": "VariableDeclarationStatement",
+                    "src": "628:10:3"
+                  },
+                  "loopExpression": {
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 559,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": false,
+                      "src": "672:3:3",
+                      "subExpression": {
+                        "argumentTypes": null,
+                        "id": 558,
+                        "name": "i",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 549,
+                        "src": "672:1:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 560,
+                    "nodeType": "ExpressionStatement",
+                    "src": "672:3:3"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "624:331:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 610,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "del",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 546,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 543,
+                  "name": "party",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 610,
+                  "src": "579:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 542,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "579:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 545,
+                  "name": "channel",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 610,
+                  "src": "594:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 544,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "594:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "578:32:3"
+            },
+            "returnParameters": {
+              "id": 547,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "617:0:3"
+            },
+            "scope": 611,
+            "src": "566:394:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 612,
+        "src": "64:901:3"
+      }
+    ],
+    "src": "0:967:3"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/mapping.sol",
+      "exportedSymbols": {
+        "Mapping": [
+          611
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".0"
+          ]
+        },
+        "id": 485,
+        "name": "PragmaDirective",
+        "src": "0:23:3"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 486,
+        "name": "PragmaDirective",
+        "src": "25:33:3"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            611
+          ],
+          "name": "Mapping",
+          "scope": 612
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "Mapping.data",
+              "name": "data",
+              "scope": 611,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "channel",
+                  "scope": 491,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 487,
+                    "name": "ElementaryTypeName",
+                    "src": "109:7:3"
+                  }
+                ],
+                "id": 488,
+                "name": "VariableDeclaration",
+                "src": "109:15:3"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "nickname",
+                  "scope": 491,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 489,
+                    "name": "ElementaryTypeName",
+                    "src": "133:6:3"
+                  }
+                ],
+                "id": 490,
+                "name": "VariableDeclaration",
+                "src": "133:15:3"
+              }
+            ],
+            "id": 491,
+            "name": "StructDefinition",
+            "src": "88:66:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "user_channel",
+              "scope": 611,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(address => struct Mapping.data[])",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(address => struct Mapping.data[])"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 492,
+                    "name": "ElementaryTypeName",
+                    "src": "166:7:3"
+                  },
+                  {
+                    "attributes": {
+                      "length": null,
+                      "type": "struct Mapping.data[]"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "data",
+                          "referencedDeclaration": 491,
+                          "type": "struct Mapping.data"
+                        },
+                        "id": 493,
+                        "name": "UserDefinedTypeName",
+                        "src": "177:4:3"
+                      }
+                    ],
+                    "id": 494,
+                    "name": "ArrayTypeName",
+                    "src": "177:6:3"
+                  }
+                ],
+                "id": 495,
+                "name": "Mapping",
+                "src": "158:26:3"
+              }
+            ],
+            "id": 496,
+            "name": "VariableDeclaration",
+            "src": "158:47:3"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "set",
+              "scope": 611,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "user_addr",
+                      "scope": 528,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 497,
+                        "name": "ElementaryTypeName",
+                        "src": "225:7:3"
+                      }
+                    ],
+                    "id": 498,
+                    "name": "VariableDeclaration",
+                    "src": "225:17:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "channel_addr",
+                      "scope": 528,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 499,
+                        "name": "ElementaryTypeName",
+                        "src": "244:7:3"
+                      }
+                    ],
+                    "id": 500,
+                    "name": "VariableDeclaration",
+                    "src": "244:20:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "nickname",
+                      "scope": 528,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 501,
+                        "name": "ElementaryTypeName",
+                        "src": "266:6:3"
+                      }
+                    ],
+                    "id": 502,
+                    "name": "VariableDeclaration",
+                    "src": "266:22:3"
+                  }
+                ],
+                "id": 503,
+                "name": "ParameterList",
+                "src": "224:65:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 504,
+                "name": "ParameterList",
+                "src": "296:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        506
+                      ],
+                      "initialValue": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "element",
+                          "scope": 527,
+                          "stateVariable": false,
+                          "storageLocation": "memory",
+                          "type": "struct Mapping.data",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "data",
+                              "referencedDeclaration": 491,
+                              "type": "struct Mapping.data"
+                            },
+                            "id": 505,
+                            "name": "UserDefinedTypeName",
+                            "src": "303:4:3"
+                          }
+                        ],
+                        "id": 506,
+                        "name": "VariableDeclaration",
+                        "src": "303:19:3"
+                      }
+                    ],
+                    "id": 507,
+                    "name": "VariableDeclarationStatement",
+                    "src": "303:19:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "channel",
+                              "referencedDeclaration": 488,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 506,
+                                  "type": "struct Mapping.data memory",
+                                  "value": "element"
+                                },
+                                "id": 508,
+                                "name": "Identifier",
+                                "src": "329:7:3"
+                              }
+                            ],
+                            "id": 510,
+                            "name": "MemberAccess",
+                            "src": "329:15:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 500,
+                              "type": "address",
+                              "value": "channel_addr"
+                            },
+                            "id": 511,
+                            "name": "Identifier",
+                            "src": "347:12:3"
+                          }
+                        ],
+                        "id": 512,
+                        "name": "Assignment",
+                        "src": "329:30:3"
+                      }
+                    ],
+                    "id": 513,
+                    "name": "ExpressionStatement",
+                    "src": "329:30:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string memory"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "nickname",
+                              "referencedDeclaration": 490,
+                              "type": "string memory"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 506,
+                                  "type": "struct Mapping.data memory",
+                                  "value": "element"
+                                },
+                                "id": 514,
+                                "name": "Identifier",
+                                "src": "366:7:3"
+                              }
+                            ],
+                            "id": 516,
+                            "name": "MemberAccess",
+                            "src": "366:16:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 502,
+                              "type": "string memory",
+                              "value": "nickname"
+                            },
+                            "id": 517,
+                            "name": "Identifier",
+                            "src": "385:8:3"
+                          }
+                        ],
+                        "id": 518,
+                        "name": "Assignment",
+                        "src": "366:27:3"
+                      }
+                    ],
+                    "id": 519,
+                    "name": "ExpressionStatement",
+                    "src": "366:27:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_struct$_data_$491_memory_ptr",
+                                  "typeString": "struct Mapping.data memory"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "push",
+                              "referencedDeclaration": null,
+                              "type": "function (struct Mapping.data storage ref) returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct Mapping.data storage ref[] storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 496,
+                                      "type": "mapping(address => struct Mapping.data storage ref[] storage ref)",
+                                      "value": "user_channel"
+                                    },
+                                    "id": 520,
+                                    "name": "Identifier",
+                                    "src": "400:12:3"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 498,
+                                      "type": "address",
+                                      "value": "user_addr"
+                                    },
+                                    "id": 521,
+                                    "name": "Identifier",
+                                    "src": "413:9:3"
+                                  }
+                                ],
+                                "id": 522,
+                                "name": "IndexAccess",
+                                "src": "400:23:3"
+                              }
+                            ],
+                            "id": 523,
+                            "name": "MemberAccess",
+                            "src": "400:28:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 506,
+                              "type": "struct Mapping.data memory",
+                              "value": "element"
+                            },
+                            "id": 524,
+                            "name": "Identifier",
+                            "src": "429:7:3"
+                          }
+                        ],
+                        "id": 525,
+                        "name": "FunctionCall",
+                        "src": "400:37:3"
+                      }
+                    ],
+                    "id": 526,
+                    "name": "ExpressionStatement",
+                    "src": "400:37:3"
+                  }
+                ],
+                "id": 527,
+                "name": "Block",
+                "src": "296:147:3"
+              }
+            ],
+            "id": 528,
+            "name": "FunctionDefinition",
+            "src": "212:231:3"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "get",
+              "scope": 611,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "user_addr",
+                      "scope": 541,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 529,
+                        "name": "ElementaryTypeName",
+                        "src": "462:7:3"
+                      }
+                    ],
+                    "id": 530,
+                    "name": "VariableDeclaration",
+                    "src": "462:17:3"
+                  }
+                ],
+                "id": 531,
+                "name": "ParameterList",
+                "src": "461:19:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 541,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct Mapping.data[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "struct Mapping.data[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "data",
+                              "referencedDeclaration": 491,
+                              "type": "struct Mapping.data"
+                            },
+                            "id": 532,
+                            "name": "UserDefinedTypeName",
+                            "src": "502:4:3"
+                          }
+                        ],
+                        "id": 533,
+                        "name": "ArrayTypeName",
+                        "src": "502:6:3"
+                      }
+                    ],
+                    "id": 534,
+                    "name": "VariableDeclaration",
+                    "src": "502:13:3"
+                  }
+                ],
+                "id": 535,
+                "name": "ParameterList",
+                "src": "501:15:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 535
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "struct Mapping.data storage ref[] storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 496,
+                              "type": "mapping(address => struct Mapping.data storage ref[] storage ref)",
+                              "value": "user_channel"
+                            },
+                            "id": 536,
+                            "name": "Identifier",
+                            "src": "531:12:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 530,
+                              "type": "address",
+                              "value": "user_addr"
+                            },
+                            "id": 537,
+                            "name": "Identifier",
+                            "src": "544:9:3"
+                          }
+                        ],
+                        "id": 538,
+                        "name": "IndexAccess",
+                        "src": "531:23:3"
+                      }
+                    ],
+                    "id": 539,
+                    "name": "Return",
+                    "src": "524:30:3"
+                  }
+                ],
+                "id": 540,
+                "name": "Block",
+                "src": "517:43:3"
+              }
+            ],
+            "id": 541,
+            "name": "FunctionDefinition",
+            "src": "449:111:3"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "del",
+              "scope": 611,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "party",
+                      "scope": 610,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 542,
+                        "name": "ElementaryTypeName",
+                        "src": "579:7:3"
+                      }
+                    ],
+                    "id": 543,
+                    "name": "VariableDeclaration",
+                    "src": "579:13:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "channel",
+                      "scope": 610,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 544,
+                        "name": "ElementaryTypeName",
+                        "src": "594:7:3"
+                      }
+                    ],
+                    "id": 545,
+                    "name": "VariableDeclaration",
+                    "src": "594:15:3"
+                  }
+                ],
+                "id": 546,
+                "name": "ParameterList",
+                "src": "578:32:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 547,
+                "name": "ParameterList",
+                "src": "617:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "assignments": [
+                            549
+                          ]
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "constant": false,
+                              "name": "i",
+                              "scope": 608,
+                              "stateVariable": false,
+                              "storageLocation": "default",
+                              "type": "uint256",
+                              "value": null,
+                              "visibility": "internal"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "name": "uint",
+                                  "type": "uint256"
+                                },
+                                "id": 548,
+                                "name": "ElementaryTypeName",
+                                "src": "628:4:3"
+                              }
+                            ],
+                            "id": 549,
+                            "name": "VariableDeclaration",
+                            "src": "628:6:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "30",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 0",
+                              "value": "0"
+                            },
+                            "id": 550,
+                            "name": "Literal",
+                            "src": "637:1:3"
+                          }
+                        ],
+                        "id": 551,
+                        "name": "VariableDeclarationStatement",
+                        "src": "628:10:3"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "<",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 549,
+                              "type": "uint256",
+                              "value": "i"
+                            },
+                            "id": 552,
+                            "name": "Identifier",
+                            "src": "640:1:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "length",
+                              "referencedDeclaration": null,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct Mapping.data storage ref[] storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 496,
+                                      "type": "mapping(address => struct Mapping.data storage ref[] storage ref)",
+                                      "value": "user_channel"
+                                    },
+                                    "id": 553,
+                                    "name": "Identifier",
+                                    "src": "644:12:3"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 543,
+                                      "type": "address",
+                                      "value": "party"
+                                    },
+                                    "id": 554,
+                                    "name": "Identifier",
+                                    "src": "657:5:3"
+                                  }
+                                ],
+                                "id": 555,
+                                "name": "IndexAccess",
+                                "src": "644:19:3"
+                              }
+                            ],
+                            "id": 556,
+                            "name": "MemberAccess",
+                            "src": "644:26:3"
+                          }
+                        ],
+                        "id": 557,
+                        "name": "BinaryOperation",
+                        "src": "640:30:3"
+                      },
+                      {
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "++",
+                              "prefix": false,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 549,
+                                  "type": "uint256",
+                                  "value": "i"
+                                },
+                                "id": 558,
+                                "name": "Identifier",
+                                "src": "672:1:3"
+                              }
+                            ],
+                            "id": 559,
+                            "name": "UnaryOperation",
+                            "src": "672:3:3"
+                          }
+                        ],
+                        "id": 560,
+                        "name": "ExpressionStatement",
+                        "src": "672:3:3"
+                      },
+                      {
+                        "children": [
+                          {
+                            "attributes": {
+                              "falseBody": null
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_address",
+                                    "typeString": "address"
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "==",
+                                  "type": "bool"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "channel",
+                                      "referencedDeclaration": 488,
+                                      "type": "address"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isLValue": true,
+                                          "isPure": false,
+                                          "lValueRequested": false,
+                                          "type": "struct Mapping.data storage ref"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "isConstant": false,
+                                              "isLValue": true,
+                                              "isPure": false,
+                                              "lValueRequested": false,
+                                              "type": "struct Mapping.data storage ref[] storage ref"
+                                            },
+                                            "children": [
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "overloadedDeclarations": [
+                                                    null
+                                                  ],
+                                                  "referencedDeclaration": 496,
+                                                  "type": "mapping(address => struct Mapping.data storage ref[] storage ref)",
+                                                  "value": "user_channel"
+                                                },
+                                                "id": 561,
+                                                "name": "Identifier",
+                                                "src": "689:12:3"
+                                              },
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "overloadedDeclarations": [
+                                                    null
+                                                  ],
+                                                  "referencedDeclaration": 543,
+                                                  "type": "address",
+                                                  "value": "party"
+                                                },
+                                                "id": 562,
+                                                "name": "Identifier",
+                                                "src": "702:5:3"
+                                              }
+                                            ],
+                                            "id": 563,
+                                            "name": "IndexAccess",
+                                            "src": "689:19:3"
+                                          },
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "overloadedDeclarations": [
+                                                null
+                                              ],
+                                              "referencedDeclaration": 549,
+                                              "type": "uint256",
+                                              "value": "i"
+                                            },
+                                            "id": 564,
+                                            "name": "Identifier",
+                                            "src": "709:1:3"
+                                          }
+                                        ],
+                                        "id": 565,
+                                        "name": "IndexAccess",
+                                        "src": "689:22:3"
+                                      }
+                                    ],
+                                    "id": 566,
+                                    "name": "MemberAccess",
+                                    "src": "689:30:3"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 545,
+                                      "type": "address",
+                                      "value": "channel"
+                                    },
+                                    "id": 567,
+                                    "name": "Identifier",
+                                    "src": "723:7:3"
+                                  }
+                                ],
+                                "id": 568,
+                                "name": "BinaryOperation",
+                                "src": "689:41:3"
+                              },
+                              {
+                                "children": [
+                                  {
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isLValue": false,
+                                          "isPure": false,
+                                          "lValueRequested": false,
+                                          "operator": "=",
+                                          "type": "struct Mapping.data storage ref"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "isConstant": false,
+                                              "isLValue": true,
+                                              "isPure": false,
+                                              "lValueRequested": true,
+                                              "type": "struct Mapping.data storage ref"
+                                            },
+                                            "children": [
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "isConstant": false,
+                                                  "isLValue": true,
+                                                  "isPure": false,
+                                                  "lValueRequested": false,
+                                                  "type": "struct Mapping.data storage ref[] storage ref"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "overloadedDeclarations": [
+                                                        null
+                                                      ],
+                                                      "referencedDeclaration": 496,
+                                                      "type": "mapping(address => struct Mapping.data storage ref[] storage ref)",
+                                                      "value": "user_channel"
+                                                    },
+                                                    "id": 569,
+                                                    "name": "Identifier",
+                                                    "src": "742:12:3"
+                                                  },
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "overloadedDeclarations": [
+                                                        null
+                                                      ],
+                                                      "referencedDeclaration": 543,
+                                                      "type": "address",
+                                                      "value": "party"
+                                                    },
+                                                    "id": 570,
+                                                    "name": "Identifier",
+                                                    "src": "755:5:3"
+                                                  }
+                                                ],
+                                                "id": 572,
+                                                "name": "IndexAccess",
+                                                "src": "742:19:3"
+                                              },
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "overloadedDeclarations": [
+                                                    null
+                                                  ],
+                                                  "referencedDeclaration": 549,
+                                                  "type": "uint256",
+                                                  "value": "i"
+                                                },
+                                                "id": 571,
+                                                "name": "Identifier",
+                                                "src": "762:1:3"
+                                              }
+                                            ],
+                                            "id": 573,
+                                            "name": "IndexAccess",
+                                            "src": "742:22:3"
+                                          },
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "isConstant": false,
+                                              "isLValue": true,
+                                              "isPure": false,
+                                              "lValueRequested": false,
+                                              "type": "struct Mapping.data storage ref"
+                                            },
+                                            "children": [
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "isConstant": false,
+                                                  "isLValue": true,
+                                                  "isPure": false,
+                                                  "lValueRequested": false,
+                                                  "type": "struct Mapping.data storage ref[] storage ref"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "overloadedDeclarations": [
+                                                        null
+                                                      ],
+                                                      "referencedDeclaration": 496,
+                                                      "type": "mapping(address => struct Mapping.data storage ref[] storage ref)",
+                                                      "value": "user_channel"
+                                                    },
+                                                    "id": 574,
+                                                    "name": "Identifier",
+                                                    "src": "767:12:3"
+                                                  },
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "overloadedDeclarations": [
+                                                        null
+                                                      ],
+                                                      "referencedDeclaration": 543,
+                                                      "type": "address",
+                                                      "value": "party"
+                                                    },
+                                                    "id": 575,
+                                                    "name": "Identifier",
+                                                    "src": "780:5:3"
+                                                  }
+                                                ],
+                                                "id": 576,
+                                                "name": "IndexAccess",
+                                                "src": "767:19:3"
+                                              },
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "commonType": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                  },
+                                                  "isConstant": false,
+                                                  "isLValue": false,
+                                                  "isPure": false,
+                                                  "lValueRequested": false,
+                                                  "operator": "-",
+                                                  "type": "uint256"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "isConstant": false,
+                                                      "isLValue": true,
+                                                      "isPure": false,
+                                                      "lValueRequested": false,
+                                                      "member_name": "length",
+                                                      "referencedDeclaration": null,
+                                                      "type": "uint256"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "attributes": {
+                                                          "argumentTypes": null,
+                                                          "isConstant": false,
+                                                          "isLValue": true,
+                                                          "isPure": false,
+                                                          "lValueRequested": false,
+                                                          "type": "struct Mapping.data storage ref[] storage ref"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "attributes": {
+                                                              "argumentTypes": null,
+                                                              "overloadedDeclarations": [
+                                                                null
+                                                              ],
+                                                              "referencedDeclaration": 496,
+                                                              "type": "mapping(address => struct Mapping.data storage ref[] storage ref)",
+                                                              "value": "user_channel"
+                                                            },
+                                                            "id": 577,
+                                                            "name": "Identifier",
+                                                            "src": "787:12:3"
+                                                          },
+                                                          {
+                                                            "attributes": {
+                                                              "argumentTypes": null,
+                                                              "overloadedDeclarations": [
+                                                                null
+                                                              ],
+                                                              "referencedDeclaration": 543,
+                                                              "type": "address",
+                                                              "value": "party"
+                                                            },
+                                                            "id": 578,
+                                                            "name": "Identifier",
+                                                            "src": "800:5:3"
+                                                          }
+                                                        ],
+                                                        "id": 579,
+                                                        "name": "IndexAccess",
+                                                        "src": "787:19:3"
+                                                      }
+                                                    ],
+                                                    "id": 580,
+                                                    "name": "MemberAccess",
+                                                    "src": "787:26:3"
+                                                  },
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "hexvalue": "31",
+                                                      "isConstant": false,
+                                                      "isLValue": false,
+                                                      "isPure": true,
+                                                      "lValueRequested": false,
+                                                      "subdenomination": null,
+                                                      "token": "number",
+                                                      "type": "int_const 1",
+                                                      "value": "1"
+                                                    },
+                                                    "id": 581,
+                                                    "name": "Literal",
+                                                    "src": "814:1:3"
+                                                  }
+                                                ],
+                                                "id": 582,
+                                                "name": "BinaryOperation",
+                                                "src": "787:28:3"
+                                              }
+                                            ],
+                                            "id": 583,
+                                            "name": "IndexAccess",
+                                            "src": "767:49:3"
+                                          }
+                                        ],
+                                        "id": 584,
+                                        "name": "Assignment",
+                                        "src": "742:74:3"
+                                      }
+                                    ],
+                                    "id": 585,
+                                    "name": "ExpressionStatement",
+                                    "src": "742:74:3"
+                                  },
+                                  {
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isLValue": false,
+                                          "isPure": false,
+                                          "lValueRequested": false,
+                                          "operator": "delete",
+                                          "prefix": true,
+                                          "type": "tuple()"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "isConstant": false,
+                                              "isLValue": true,
+                                              "isPure": false,
+                                              "lValueRequested": true,
+                                              "type": "struct Mapping.data storage ref"
+                                            },
+                                            "children": [
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "isConstant": false,
+                                                  "isLValue": true,
+                                                  "isPure": false,
+                                                  "lValueRequested": false,
+                                                  "type": "struct Mapping.data storage ref[] storage ref"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "overloadedDeclarations": [
+                                                        null
+                                                      ],
+                                                      "referencedDeclaration": 496,
+                                                      "type": "mapping(address => struct Mapping.data storage ref[] storage ref)",
+                                                      "value": "user_channel"
+                                                    },
+                                                    "id": 586,
+                                                    "name": "Identifier",
+                                                    "src": "834:12:3"
+                                                  },
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "overloadedDeclarations": [
+                                                        null
+                                                      ],
+                                                      "referencedDeclaration": 543,
+                                                      "type": "address",
+                                                      "value": "party"
+                                                    },
+                                                    "id": 587,
+                                                    "name": "Identifier",
+                                                    "src": "847:5:3"
+                                                  }
+                                                ],
+                                                "id": 588,
+                                                "name": "IndexAccess",
+                                                "src": "834:19:3"
+                                              },
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "commonType": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                  },
+                                                  "isConstant": false,
+                                                  "isLValue": false,
+                                                  "isPure": false,
+                                                  "lValueRequested": false,
+                                                  "operator": "-",
+                                                  "type": "uint256"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "isConstant": false,
+                                                      "isLValue": true,
+                                                      "isPure": false,
+                                                      "lValueRequested": false,
+                                                      "member_name": "length",
+                                                      "referencedDeclaration": null,
+                                                      "type": "uint256"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "attributes": {
+                                                          "argumentTypes": null,
+                                                          "isConstant": false,
+                                                          "isLValue": true,
+                                                          "isPure": false,
+                                                          "lValueRequested": false,
+                                                          "type": "struct Mapping.data storage ref[] storage ref"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "attributes": {
+                                                              "argumentTypes": null,
+                                                              "overloadedDeclarations": [
+                                                                null
+                                                              ],
+                                                              "referencedDeclaration": 496,
+                                                              "type": "mapping(address => struct Mapping.data storage ref[] storage ref)",
+                                                              "value": "user_channel"
+                                                            },
+                                                            "id": 589,
+                                                            "name": "Identifier",
+                                                            "src": "854:12:3"
+                                                          },
+                                                          {
+                                                            "attributes": {
+                                                              "argumentTypes": null,
+                                                              "overloadedDeclarations": [
+                                                                null
+                                                              ],
+                                                              "referencedDeclaration": 543,
+                                                              "type": "address",
+                                                              "value": "party"
+                                                            },
+                                                            "id": 590,
+                                                            "name": "Identifier",
+                                                            "src": "867:5:3"
+                                                          }
+                                                        ],
+                                                        "id": 591,
+                                                        "name": "IndexAccess",
+                                                        "src": "854:19:3"
+                                                      }
+                                                    ],
+                                                    "id": 592,
+                                                    "name": "MemberAccess",
+                                                    "src": "854:26:3"
+                                                  },
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "hexvalue": "31",
+                                                      "isConstant": false,
+                                                      "isLValue": false,
+                                                      "isPure": true,
+                                                      "lValueRequested": false,
+                                                      "subdenomination": null,
+                                                      "token": "number",
+                                                      "type": "int_const 1",
+                                                      "value": "1"
+                                                    },
+                                                    "id": 593,
+                                                    "name": "Literal",
+                                                    "src": "881:1:3"
+                                                  }
+                                                ],
+                                                "id": 594,
+                                                "name": "BinaryOperation",
+                                                "src": "854:28:3"
+                                              }
+                                            ],
+                                            "id": 595,
+                                            "name": "IndexAccess",
+                                            "src": "834:49:3"
+                                          }
+                                        ],
+                                        "id": 596,
+                                        "name": "UnaryOperation",
+                                        "src": "827:56:3"
+                                      }
+                                    ],
+                                    "id": 597,
+                                    "name": "ExpressionStatement",
+                                    "src": "827:56:3"
+                                  },
+                                  {
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isLValue": false,
+                                          "isPure": false,
+                                          "lValueRequested": false,
+                                          "operator": "--",
+                                          "prefix": false,
+                                          "type": "uint256"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "isConstant": false,
+                                              "isLValue": true,
+                                              "isPure": false,
+                                              "lValueRequested": true,
+                                              "member_name": "length",
+                                              "referencedDeclaration": null,
+                                              "type": "uint256"
+                                            },
+                                            "children": [
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "isConstant": false,
+                                                  "isLValue": true,
+                                                  "isPure": false,
+                                                  "lValueRequested": false,
+                                                  "type": "struct Mapping.data storage ref[] storage ref"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "overloadedDeclarations": [
+                                                        null
+                                                      ],
+                                                      "referencedDeclaration": 496,
+                                                      "type": "mapping(address => struct Mapping.data storage ref[] storage ref)",
+                                                      "value": "user_channel"
+                                                    },
+                                                    "id": 598,
+                                                    "name": "Identifier",
+                                                    "src": "894:12:3"
+                                                  },
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "overloadedDeclarations": [
+                                                        null
+                                                      ],
+                                                      "referencedDeclaration": 543,
+                                                      "type": "address",
+                                                      "value": "party"
+                                                    },
+                                                    "id": 599,
+                                                    "name": "Identifier",
+                                                    "src": "907:5:3"
+                                                  }
+                                                ],
+                                                "id": 600,
+                                                "name": "IndexAccess",
+                                                "src": "894:19:3"
+                                              }
+                                            ],
+                                            "id": 601,
+                                            "name": "MemberAccess",
+                                            "src": "894:26:3"
+                                          }
+                                        ],
+                                        "id": 602,
+                                        "name": "UnaryOperation",
+                                        "src": "894:28:3"
+                                      }
+                                    ],
+                                    "id": 603,
+                                    "name": "ExpressionStatement",
+                                    "src": "894:28:3"
+                                  },
+                                  {
+                                    "id": 604,
+                                    "name": "Break",
+                                    "src": "933:5:3"
+                                  }
+                                ],
+                                "id": 605,
+                                "name": "Block",
+                                "src": "731:217:3"
+                              }
+                            ],
+                            "id": 606,
+                            "name": "IfStatement",
+                            "src": "685:263:3"
+                          }
+                        ],
+                        "id": 607,
+                        "name": "Block",
+                        "src": "676:279:3"
+                      }
+                    ],
+                    "id": 608,
+                    "name": "ForStatement",
+                    "src": "624:331:3"
+                  }
+                ],
+                "id": 609,
+                "name": "Block",
+                "src": "617:343:3"
+              }
+            ],
+            "id": 610,
+            "name": "FunctionDefinition",
+            "src": "566:394:3"
+          }
+        ],
+        "id": 611,
+        "name": "ContractDefinition",
+        "src": "64:901:3"
+      }
+    ],
+    "id": 612,
+    "name": "SourceUnit",
+    "src": "0:967:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x6ef7fB29DC7FB6046FDBB672254abe339C8c7173",
+      "transactionHash": "0x5efd2f7837090578d3b9a7c89e4e99f7816d70cd4bbbea1a11dbc3a80c9e0d37"
+    },
+    "1651027363714": {
+      "events": {},
+      "links": {},
+      "address": "0x9a36Bb5C590F9BB2cCe9172D205e046A344C9859",
+      "transactionHash": "0x2a12adfc4231c6e439ad00dcb6034b951ef6135d130d6faff77287fe2dee481e"
+    },
+    "1651090715783": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x62af6cec468649fe63410b3d666a128e5a7c6871e48558355ddc05d9d98bf33d"
+    },
+    "1651097014911": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x62af6cec468649fe63410b3d666a128e5a7c6871e48558355ddc05d9d98bf33d"
+    },
+    "1651105756200": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x62af6cec468649fe63410b3d666a128e5a7c6871e48558355ddc05d9d98bf33d"
+    },
+    "1651121352169": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x62af6cec468649fe63410b3d666a128e5a7c6871e48558355ddc05d9d98bf33d"
+    },
+    "1651172245631": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x9e21041813a98a40c125f42bc17fc0d46266100e3122e53ab565ab15623d678c"
+    },
+    "1651175231240": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x9e21041813a98a40c125f42bc17fc0d46266100e3122e53ab565ab15623d678c"
+    },
+    "1651184395820": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x9e21041813a98a40c125f42bc17fc0d46266100e3122e53ab565ab15623d678c"
+    },
+    "1651209587852": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x9e21041813a98a40c125f42bc17fc0d46266100e3122e53ab565ab15623d678c"
+    },
+    "1651209865052": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x9e21041813a98a40c125f42bc17fc0d46266100e3122e53ab565ab15623d678c"
+    },
+    "1651301395886": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x9e21041813a98a40c125f42bc17fc0d46266100e3122e53ab565ab15623d678c"
+    },
+    "1651357593082": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x9e21041813a98a40c125f42bc17fc0d46266100e3122e53ab565ab15623d678c"
+    },
+    "1651359859692": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x9e21041813a98a40c125f42bc17fc0d46266100e3122e53ab565ab15623d678c"
+    },
+    "1651360062645": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x9e21041813a98a40c125f42bc17fc0d46266100e3122e53ab565ab15623d678c"
+    },
+    "1651360844935": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x9e21041813a98a40c125f42bc17fc0d46266100e3122e53ab565ab15623d678c"
+    },
+    "1651361334706": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x9e21041813a98a40c125f42bc17fc0d46266100e3122e53ab565ab15623d678c"
+    },
+    "1651362275568": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x9e21041813a98a40c125f42bc17fc0d46266100e3122e53ab565ab15623d678c"
+    },
+    "1651363163095": {
+      "events": {},
+      "links": {},
+      "address": "0xB0FD454D420123E836ba892A8D74fE1590CA1C90",
+      "transactionHash": "0x9e21041813a98a40c125f42bc17fc0d46266100e3122e53ab565ab15623d678c"
+    }
+  },
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-05-01T00:00:16.883Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
