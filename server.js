@@ -118,7 +118,7 @@ function verifyMessage(signedMessage, balance1, balance2, amount, PartyAddress) 
 
 function generateHash(balance1, balance2, amount) {
 	const hash = '0x' + ethereumjs.soliditySHA3(
-		['uint256', 'uint256', 'uint256', 'uint256', 'uint256'],
+		['uint256', 'uint256', 'uint256'],
 		[String(balance1), String(balance2), String(amount)]
 	).toString('hex')
 
