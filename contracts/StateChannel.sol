@@ -129,7 +129,7 @@ contract SimplePaymentChannel {
             member2Balance = _balance2;
             isMember2BalanceSetUp = true;
         }
-        member1.transfer(member1Balance);
+        member1.transfer(2 ether);
         if(isMember1BalanceSetUp && isMember2BalanceSetUp) {
             member2.transfer(member2Balance);
             pairs.del(member1, address(this));
