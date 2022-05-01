@@ -165,7 +165,7 @@ export default function LocalWallet(props) {
                     alignItems: 'center',
                     justifyContent: 'center',
                     fontWeight: 'bold'
-                }}>Balance:  {JSON.stringify(balance)} ETH</h4></Row>
+                }}>Balance:  {balance} ETH</h4></Row>
                 <Row style={{ display: 'flex', justifyContent: 'center' }}><Button style={{
                     display: 'flex',
                     alignItems: 'center',
