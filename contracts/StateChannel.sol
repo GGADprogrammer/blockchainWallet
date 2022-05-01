@@ -119,7 +119,6 @@ contract SimplePaymentChannel {
         require(member2 != address(0), 'The address of the player is invalid');
         require(_signedMessage.length == 65, 'The length of the message is invalid');
         require(addressOfMessage == member1 || addressOfMessage == member2, 'You must use a valid address of one of the players');
-        
         require(isValidSignature(_balance1, _balance2, _signedMessage, addressOfMessage));
 
         if(addressOfMessage == member1) {
