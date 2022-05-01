@@ -69,13 +69,13 @@ async function start() {
             channel = channels[message.contractAddress]
             if(message.sender != channel.addressParty1 && message.sender != channel.addressParty2) {
                 console.log('sender not satisfy')
-                console.log(message.sender,channel.addressParty1, channel.addressParty2)
                 return 'error' //io.to(channel.socketParty1).emit('error', 'The received address of the first Party is invalid')
             }
 
             const isValid = verifyMessage(message.signedMessage, channel.balanceParty1, channel.balanceParty2, message.amount, message.sender)
             if(!isValid){
-                console.log('Oh my god') 
+                console.log('Oh my god in server') 
+                console.log(channel,message)
                 return 'error'
              } //io.to(message.sender).emit('error', 'The received message is not valid, generate a new one again')
 

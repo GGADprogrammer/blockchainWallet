@@ -71,6 +71,9 @@ export default function LocalWallet(props) {
             signedMessage: signedMessage,
             amount: amount
         }
+        console.log('in local wallet')
+        console.log(Channel.balance1,Channel.balance2,amount)
+        console.log(props.usrAddress[0])
         props.socket.emit('signed-message',data)
     }
     // function generateHash(balance1, balance2, amount) {
