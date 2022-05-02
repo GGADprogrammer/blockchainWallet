@@ -72,8 +72,8 @@ async function start() {
                 return 'error' //io.to(channel.socketParty1).emit('error', 'The received address of the first Party is invalid')
             }
 
-            //const isValid = verifyMessage(message.signedMessage, channel.balanceParty1, channel.balanceParty2, message.amount, message.sender)
-            const isValid=true
+            const isValid = verifyMessage(message.signedMessage, channel.balanceParty1, channel.balanceParty2, message.amount, message.sender)
+            //const isValid=true
             if(!isValid){
                 console.log('Oh my god in server') 
                 console.log(channel,message)
@@ -107,6 +107,7 @@ async function start() {
 
 function verifyMessage(signedMessage, balance1, balance2, amount, PartyAddress) {
 	const hash = generateHash(balance1,balance2,amount)
+    console.log('server hash',hash)
 	const message = ethereumjs.soliditySHA3(
 		['string', 'bytes32'],
 		['\x19Ethereum Signed Message:\n32', hash]

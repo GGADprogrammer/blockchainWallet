@@ -63,7 +63,8 @@ export default function LocalWallet(props) {
     
     async function transfer(){
         if (parseInt(amount) > parseInt(getBalance())) return ('You can not transfer more than your current balance');
-        const hash = generateHash1(Channel.balance1,Channel.balance2,amount);
+        const hash = generateHash1(parseInt(Channel.balance1),parseInt(Channel.balance2),amount);
+        console.log('transfer client',hash)
         const signedMessage = await signMessage(hash);
         let data = {
             contractAddress:props.channelAddr,
@@ -129,8 +130,8 @@ export default function LocalWallet(props) {
         // judge whether the reponse is valid
         let data = {
             contractAddress: props.channelAddr,
-            balance1:Channel.balance1,
-            balance2:Channel.balance2
+            balance1:parseInt(Channel.balance1),
+            balance2:parseInt(Channel.balance2)
         }
         props.socket.emit('close channel',data)
     }
