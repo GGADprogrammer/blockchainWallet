@@ -130,8 +130,8 @@ contract SimplePaymentChannel {
         }
         
         if(isMember1BalanceSetUp && isMember2BalanceSetUp) {
-            member1.transfer(member1Balance);
-            member2.transfer(member2Balance);
+            member1.transfer(_balance1*(10**18));
+            member2.transfer(_balance2*(10**18));
             pairs.del(member1, address(this));
             pairs.del(member2, address(this));
         }
